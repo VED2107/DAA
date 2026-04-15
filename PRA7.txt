@@ -1,0 +1,19 @@
+// Practical 7: Coin Change (Greedy)
+#include<stdio.h>
+
+int main(){
+    int n,amt;
+    scanf("%d",&n);
+
+    int coins[n];
+    for(int i=0;i<n;i++) scanf("%d",&coins[i]);
+
+    scanf("%d",&amt);
+
+    for(int i=0;i<n;i++){
+        while(amt>=coins[i]){
+            printf("%d ",coins[i]);
+            amt-=coins[i];
+        }
+    }
+}

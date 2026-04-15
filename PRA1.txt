@@ -1,0 +1,19 @@
+// Practical 1: Sum of N
+#include<stdio.h>
+
+int rec(int n){
+    if(n==0) return 0;
+    return n + rec(n-1);
+}
+
+int main(){
+    int n,sum=0;
+    scanf("%d",&n);
+
+    for(int i=1;i<=n;i++)
+        sum+=i;
+
+    printf("Loop=%d\n",sum);
+    printf("Formula=%d\n",n*(n+1)/2);
+    printf("Recursion=%d\n",rec(n));
+}
