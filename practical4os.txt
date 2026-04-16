@@ -1,0 +1,95 @@
+✅ p4_1.txt – Prime Number
+echo "Enter number:"
+read n
+flag=0
+i=2
+
+while [ $i -le $(($n/2)) ]
+do
+    if [ $(($n % $i)) -eq 0 ]
+    then
+        flag=1
+        break
+    fi
+    i=$(($i+1))
+done
+
+if [ $n -le 1 ] || [ $flag -eq 1 ]
+then
+    echo "Not Prime"
+else
+    echo "Prime"
+fi
+✅ p4_2.txt – HRA Calculation
+echo "Enter Basic Salary:"
+read basic
+
+if [ $basic -lt 1000 ]
+then
+    hra=$(($basic*10/100))
+elif [ $basic -lt 20000 ]
+then
+    hra=$(($basic*20/100))
+else
+    hra=$(($basic*30/100))
+fi
+
+echo "HRA = $hra"
+✅ p4_3.txt – Greeting Based on Time
+hour=$(date +%H)
+
+if [ $hour -lt 12 ]
+then
+    echo "Good Morning"
+elif [ $hour -lt 17 ]
+then
+    echo "Good Afternoon"
+else
+    echo "Good Evening"
+fi
+✅ p4_4.txt – Capital of Gujarat
+while true
+do
+    echo "What is the capital of Gujarat?"
+    read ans
+
+    if [ "$ans" = "Gandhinagar" ] || [ "$ans" = "gandhinagar" ] || [ "$ans" = "GANDHINAGAR" ]
+    then
+        echo "Correct Answer"
+        break
+    else
+        echo "Answer not correct, try again..."
+    fi
+done
+✅ p4_5.txt – Display Line from File
+echo "Enter file name:"
+read file
+
+echo "Enter line number:"
+read line
+
+sed -n "${line}p" $file
+✅ p4_6.txt – Count Newline Characters
+echo "Enter file name:"
+read file
+
+count=$(wc -l < $file)
+echo "Newline characters = $count"
+✅ p4_7.txt – Word Count using wc
+echo "Enter file name:"
+read file
+
+count=$(wc -w < $file)
+echo "Word count = $count"
+✅ p4_8.txt – Word Count without wc
+echo "Enter file name:"
+read file
+
+count=0
+
+for word in $(cat $file)
+do
+    count=$(($count+1))
+done
+
+echo "Word count = $count"

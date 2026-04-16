@@ -1,0 +1,75 @@
+📁 PRACTICAL 3 (All Codes)
+✅ p3_1.txt – Loss Percentage
+echo "Enter Cost Price:"
+read cp
+echo "Enter Selling Price:"
+read sp
+
+loss=$(($cp-$sp))
+loss_percent=$(($loss*100/$cp))
+
+echo "Loss Percentage = $loss_percent %"
+✅ p3_2.txt – Square Below 50 Loop
+choice="y"
+
+while [ "$choice" = "y" ]
+do
+    echo "Enter a number below 50:"
+    read num
+
+    if [ $num -lt 50 ]
+    then
+        square=$(($num*$num))
+        echo "Square = $square"
+    else
+        echo "Please enter number below 50"
+    fi
+
+    echo "Do you want to continue? (y/n)"
+    read choice
+done
+✅ p3_3.txt – Display $50
+echo "\$50"
+✅ p3_4.txt – String Search in File
+echo "Enter file name:"
+read file
+
+echo "Enter string to search:"
+read str
+
+if grep -q "$str" "$file"
+then
+    echo "String found in file"
+else
+    echo "String not found in file"
+fi
+✅ p3_5.txt – Execute Command
+echo "Enter command name:"
+read cmd
+
+$cmd
+✅ p3_6.txt – Month Check
+echo "Enter month:"
+read m
+
+if [ "$m" = "Jan" ] || [ "$m" = "Janu" ] || [ "$m" = "Janua" ] || [ "$m" = "January" ]
+then
+    echo "January"
+fi
+✅ p3_7.txt – Fibonacci Series
+echo "Enter number of terms:"
+read n
+
+a=0
+b=1
+
+echo "$a"
+echo "$b"
+
+for ((i=2;i<n;i++))
+do
+    c=$(($a+$b))
+    echo "$c"
+    a=$b
+    b=$c
+done

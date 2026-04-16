@@ -1,0 +1,45 @@
+📁 PRACTICAL 2 (All Codes)
+✅ p2_5.txt – College Name
+echo "Enter your college name:"
+read college
+
+echo "My college name is : $college"
+✅ p2_6.txt – Arithmetic Operations
+echo "Enter first number:"
+read a
+echo "Enter second number:"
+read b
+
+echo "Sum = $(($a+$b))"
+echo "Subtraction = $(($a-$b))"
+echo "Multiplication = $(($a*$b))"
+echo "Division = $(($a/$b))"
+echo "Modulo = $(($a%$b))"
+✅ p2_7.txt – Greatest of Two
+echo "Enter first number:"
+read a
+echo "Enter second number:"
+read b
+
+if [ $a -gt $b ]
+then
+    echo "$a is greatest"
+elif [ $b -gt $a ]
+then
+    echo "$b is greatest"
+else
+    echo "Both numbers are equal"
+fi
+✅ p2_8.txt – Greatest of Three
+echo "Enter three numbers:"
+read a b c
+
+if [ $a -ge $b ] && [ $a -ge $c ]
+then
+    echo "$a is greatest"
+elif [ $b -ge $a ] && [ $b -ge $c ]
+then
+    echo "$b is greatest"
+else
+    echo "$c is greatest"
+fi
